@@ -28,6 +28,16 @@ class Snake:
             self.snake_body[seg_num].goto(x, y)
 
         self.snake_body[0].forward(MOVE_DISTANCE)
+    def add_segment(self,position):
+        tim = Turtle()
+        tim.color("white")
+        tim.shape("square")
+        tim.penup()
+        tim.goto(position)
+        self.snake_body.append(tim)
+
+    def extend(self):
+        self.add_segment(self.snake_body[-1].position())
 
 
     def up(self):
